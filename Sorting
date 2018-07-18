@@ -6,7 +6,6 @@ for i in range(len(arr)):
         if arr[i]<arr[j]:
             arr[i],arr[j]=arr[j],arr[i]
 
-
 print(arr)
 
 --------------------------------------------------------------------
@@ -18,5 +17,16 @@ for i in range(len(arr)):
         if arr[i]>arr[j]:
             arr[i],arr[j]=arr[j],arr[i]
 
-
 print(arr)
+
+-----------------------------------------------------------------------
+#Bubble Sort
+arr=[7,3,12,5,65,73,1,9,6,41]
+n=0
+while n<9:
+    for i in range(len(arr)-1):
+        if arr[i]>arr[i+1]:
+            arr[i],arr[i+1]=arr[i+1],arr[i]
+    n=n+1
+print(arr)
+
