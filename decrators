@@ -1,0 +1,14 @@
+from datetime import datetime 
+def decor(f):
+    def inner(*args,**kwargs):
+        print(datetime.now().microsecond)
+        a=f(*args,**kwargs)
+        print(a)
+        print(datetime.now().microsecond)
+    return inner
+
+@decor
+def test(name,age,loc,company):
+    return (name,age,loc,company)
+   
+test('suman',{'address':'bangalore'},[3,4],'wipro')
