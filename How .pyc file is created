@@ -1,0 +1,20 @@
+Python automatically compiles your script to compiled code, so called byte code, before running it.
+
+When a module is imported for the first time, or when the source is more recent than the current compiled file, a .pyc file containing the compiled code will usually be created in the same directory as the .py file. When you run the program next time, Python uses this file to skip the compilation step.
+
+One reason that a .pyc file may not be created is permissions problems with the directory. This can happen, for example, if you develop as one user but run as another, such as if you are testing with a web server. Creation of a .pyc file is automatic if you’re importing a module and Python has the ability (permissions, free space, etc.) to write the compiled module back to the directory.
+
+Running a script is not considered an import and no .pyc will be created. For example, if you have a script file abc.py that imports another module xyz.py, when you run abc, xyz.pyc will be created since xyz is imported, but no abc.pyc file will be created since abc.py isn’t being imported.
+
+If you need to create a .pyc file for a module that is not imported, you can use the py_compile and compileall modules.
+
+The py_compile module can manually compile any module. One way is to use the py_compile.compile function in that module interactively:
+
+>>> import py_compile
+>>> py_compile.compile('abc.py')
+This will write the .pyc to the same location as abc.py (you can override that with the optional parameter cfile).
+
+You can also automatically compile all files in a directory or directories using the compileall module.
+
+python -m compileall .
+If the directory name (the current directory in this example) is omitted, the module compiles everything found on sys.path.
