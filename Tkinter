@@ -1,0 +1,23 @@
+import sys
+from tkinter import *
+def fun(a,b):
+    return int(a)+int(b)
+
+
+
+if __name__ == "__main__":
+    a=fun(sys.argv[1],sys.argv[2])
+    root=Tk()
+    root.title("add")
+    w=Label(root,text=str(a),width=50,height=10).pack()
+    b=Button(root,text='ok',command=root.destroy,width=10)
+    b.pack()
+    root.mainloop()
+    
+    =================================================================
+    
+    pip install pyinstaller
+    
+    pyinstaller --onefile file.py
+    
+    In UiPath:- open activity --> start process --> give path of exe --> the argument like this as .net style (" """&Cint(112)& """ """ & CInt(12) & """ ")
