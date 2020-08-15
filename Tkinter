@@ -1,11 +1,12 @@
 import sys
 from tkinter import *
 def fun(a,b):
-    return int(a)+int(b)
+    return int(a)/int(b)
 
 
 
 if __name__ == "__main__":
+   try:
     a=fun(sys.argv[1],sys.argv[2])
     root=Tk()
     root.title("add")
@@ -13,6 +14,11 @@ if __name__ == "__main__":
     b=Button(root,text='ok',command=root.destroy,width=10)
     b.pack()
     root.mainloop()
+   except Exception as e:
+       root=Tk()
+       Label(root,text="Something went wrong \n"+str(e),width=50,height=10).pack()
+       Button(root,text='ok',command=root.destroy,width=10).pack()
+       root.mainloop()
     
     =================================================================
     
