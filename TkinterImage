@@ -1,0 +1,10 @@
+from tkinter import *
+from PIL import Image, ImageTk
+mahmudul_root = Tk()
+mahmudul_root.geometry("1255x944")
+image = Image.open("C:\\Users\DELL\\Desktop\\KPMG-Logo1.png")
+image=image.resize((160, 150), Image.ANTIALIAS)
+photo = ImageTk.PhotoImage(image)
+varun_label = Label(image=photo)
+varun_label.pack()
+mahmudul_root.mainloop()
